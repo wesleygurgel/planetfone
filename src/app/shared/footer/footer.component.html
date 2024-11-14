@@ -1,23 +1,26 @@
-<footer class="footer" [ngClass]="{'has-cards': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'}">
-  <div class="container container-lg" *ngIf="getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'">
+<footer
+    class="footer"
+    [ngClass]="{ 'has-cards': getPath() !== '/user-profile' && getPath() !== '/register' && getPath() !== '/login' }"
+>
+    <div class="container container-lg" *ngIf="getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'">
     <div class="row">
       <div class="col-md-6 mb-5 mb-md-0">
         <div class="card card-lift--hover shadow border-0">
           <a [routerLink]="['/landing']" title="Landing Page">
-            <img src="./assets/img/theme/landing.jpg" class="card-img">
+            <img src="./assets/img/theme/tec1.png" class="card-img">
           </a>
         </div>
       </div>
       <div class="col-md-6 mb-5 mb-lg-0">
         <div class="card card-lift--hover shadow border-0">
           <a [routerLink]="['/user-profile']" title="Profile Page">
-            <img src="./assets/img/theme/profile.jpg" class="card-img">
+            <img src="./assets/img/theme/tec2.png" class="card-img">
           </a>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
+    <!-- <div class="container">
     <div class="row row-grid align-items-center" [ngClass]="{'my-md': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login', 'mb-5':getPath()==='/user-profile' || getPath()==='/register' || getPath()==='/login'}">
       <div class="col-lg-6">
         <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
@@ -63,5 +66,67 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
+
+    <div class="container">
+        <div
+            class="row row-grid align-items-center"
+            [ngClass]="{
+                'my-md': getPath() !== '/user-profile' && getPath() !== '/register' && getPath() !== '/login',
+                'mb-5': getPath() === '/user-profile' || getPath() === '/register' || getPath() === '/login'
+            }"
+        >
+            <div class="col-lg-6">
+                <h3 class="text-primary font-weight-light mb-2">Obrigado por confiar na Planetfone!</h3>
+                <h4 class="mb-0 font-weight-light">Entre em contato conosco em qualquer uma de nossas plataformas.</h4>
+            </div>
+            <div class="col-lg-6 text-lg-center btn-wrapper">
+                <a
+                    target="_blank"
+                    href="https://twitter.com/planetfone"
+                    class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg"
+                    ngbTooltip="Siga-nos"
+                >
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a
+                    target="_blank"
+                    href="https://www.facebook.com/planetfone"
+                    class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg"
+                    ngbTooltip="Curta nossa página"
+                >
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+                <a
+                    target="_blank"
+                    href="https://www.linkedin.com/company/planetfone"
+                    class="btn btn-neutral btn-icon-only btn-linkedin btn-round btn-lg"
+                    ngbTooltip="Siga-nos no LinkedIn"
+                >
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        <hr />
+        <div class="row align-items-center justify-content-md-between">
+            <div class="col-md-6">
+                <div class="copyright">&copy; {{ test | date : "yyyy" }} Planetfone. Todos os direitos reservados.</div>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav nav-footer justify-content-end">
+                    <li class="nav-item">
+                        <a href="https://www.planetfone.com.br" class="nav-link" target="_blank">Planetfone</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.planetfone.com.br/sobre" class="nav-link" target="_blank">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.planetfone.com.br/termos" class="nav-link" target="_blank"
+                            >Termos de Uso</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
