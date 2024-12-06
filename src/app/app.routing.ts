@@ -10,12 +10,13 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes =[
-    { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'register',           component: SignupComponent },
+    // { path: 'home',             component: HomeComponent },
+    { path: 'home',             component: LandingComponent },
+    // { path: 'user-profile',     component: ProfileComponent },
+    // { path: 'register',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
-    { path: 'login',          component: LoginComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    // { path: 'login',          component: LoginComponent },
+    { path: '', redirectTo: 'landing', pathMatch: 'full' }
 ];
 
 @NgModule({
